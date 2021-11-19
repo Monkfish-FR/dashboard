@@ -1,0 +1,55 @@
+@use "/src/styles/vars" as v;
+
+.nav {
+  display: flex;
+  height: v.add-line(4);
+  justify-content: space-between;
+
+  div,
+  ul {
+    height: 100%;
+    padding: 0 v.add-line(2);
+  }
+
+  ul {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    li {
+      margin: 0 v.add-line();
+    }
+  }
+
+  h1 {
+    @include v.sizes("oversize");
+
+    color: v.$default;
+    font-family: v.$font-serif;
+    font-weight: 700;
+    height: v.add-line(4);
+  }
+
+  &__link {
+    border-bottom: 4px solid v.$white;
+    color: v.$default;
+    display: block;
+    line-height: 3rem;
+    margin: 0.5rem 0;
+    transition: color 0.3s linear, border-color 0.3s linear;
+
+    &:hover,
+    &--active {
+      text-decoration: none;
+    }
+
+    &:hover {
+      border-bottom-color: v.$secondary;
+    }
+
+    &--active,
+    &--active:hover {
+      border-bottom-color: v.$primary;
+    }
+  }
+}

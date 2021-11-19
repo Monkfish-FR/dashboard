@@ -1,0 +1,64 @@
+@use "./vars" as v;
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th,
+  td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &.is-narrow {
+      width: 2rem;
+    }
+
+    &.is-actions {
+      width: 8rem;
+    }
+  }
+
+  thead {
+    th {
+      @include v.sizes("small", 1);
+
+      border-bottom: 1px solid v.$grey;
+      color: v.$grey;
+      line-height: calc(2rem - 1px);
+      padding: 0 0.25rem;
+      text-align: left;
+    }
+  }
+
+  tbody {
+    tr {
+      &:nth-child(even) {
+        background-color: v.$lighter;
+      }
+
+      &.border-success,
+      &.border-warning {
+        border-left: 4px solid v.$light;
+
+        td:first-child {
+          padding-left: 8px;
+        }
+      }
+      &.border-success {
+        border-left-color: v.$success;
+      }
+      &.border-warning {
+        border-left-color: v.$warning;
+      }
+    }
+
+    td {
+      padding: v.add-line() 0.25rem;
+      vertical-align: top;
+
+      &.is-narrow {
+        color: lighten($color: v.$default, $amount: 50);
+      }
+    }
+  }
+}

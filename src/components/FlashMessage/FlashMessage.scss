@@ -1,0 +1,96 @@
+@use "../../styles/vars" as v;
+
+.message {
+  animation: fadeIn 1s;
+  background: v.$light;
+  border-radius: 4px;
+  color: v.$default;
+  left: 50%;
+  padding: v.add-line(0.5);
+  position: absolute;
+  top: v.add-line(3.5);
+  transform: translateX(-50%);
+  width: 60rem;
+  z-index: 1;
+
+  &-error {
+    background: v.$error;
+    color: v.$white;
+  }
+
+  &-success {
+    background: v.$success;
+    color: v.$white;
+  }
+
+  &-warning {
+    background: v.$warning;
+    color: v.$default;
+  }
+
+  > * {
+    white-space: break-spaces;
+  }
+}
+
+.alert {
+  animation: fadeIn 1s;
+  align-items: center;
+  background: rgba(v.$default, 0.9);
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 1;
+
+  &__content {
+    background: v.$default;
+    color: v.$white;
+    margin-top: v.add-line(-8);
+    padding: v.add-line(2);
+    width: 60rem;
+
+    pre {
+      margin-top: v.add-line();
+      white-space: break-spaces;
+    }
+  }
+
+  &__title {
+    @include v.sizes("oversize");
+
+    color: v.$light;
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &-error {
+    .alert__title {
+      color: v.$error;
+    }
+  }
+
+  &-success {
+    .alert__title {
+      color: v.$success;
+    }
+  }
+
+  &-warning {
+    .alert__title {
+      color: v.$warning;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,36 @@
+@use "/src/styles/vars" as v;
+
+.app {
+  &__content {
+    padding-top: v.add-line(2);
+  }
+}
+
+.wrapper {
+  &--cols-2 {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__col {
+    padding: 0 v.add-line();
+    width: 50vw;
+  }
+
+  &__filters {
+    @include v.sizes('small');
+
+    color: v.$light;
+    margin-bottom: v.add-line(0.5);
+    text-align: right;
+  }
+}
+
+.sticky {
+  position: sticky;
+  top: v.add-line(3);
+}
+
+.container {
+  position: relative;
+}

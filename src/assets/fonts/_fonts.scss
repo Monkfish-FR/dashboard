@@ -1,0 +1,49 @@
+@forward "./icomoon/icomoon" as icomoon-*;
+
+@font-face {
+  font-display: block;
+  font-family: "icomoon";
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  src: url("./icomoon/icomoon.woff2?v1") format("woff2");
+}
+
+@font-face {
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./playfairdisplay/PlayfairDisplay-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./playfairdisplay/PlayfairDisplay-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Source Code Pro";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./sourcecodepro/SourceCodePro-Regular.ttf.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./sourcesanspro/SourceSans3-Regular.ttf.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: italic;
+  font-weight: 400;
+  src: url("./sourcesanspro/SourceSans3-It.ttf.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./sourcesanspro/SourceSans3-Bold.ttf.woff2") format("woff2");
+}

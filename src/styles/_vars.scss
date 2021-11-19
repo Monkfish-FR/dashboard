@@ -1,0 +1,78 @@
+@use "../assets/fonts/fonts" as f;
+
+$default: #2f2d2e;
+$primary: #048ba8;
+$secondary: #fa0;
+$success: #04a821;
+$warning: #fa0;
+$error: #ff2a00;
+
+$white: #fff;
+$black: #000;
+$grey: #666;
+$light: #ccc;
+$lighter: #f6f6f6;
+
+$font-serif: "Playfair Display", Georgia, serif;
+$font-sans: "Source Sans Pro", Arial, sans-serif;
+$font-code: "Source Code Pro", monospace;
+$font-icon: "icomoon";
+
+/**
+ * @usage
+ * html { @include sizes(); } // output: html { font-size: 16px; line-height: 24px; }
+ * h1 {
+ *   @include sizes('biggest'); // font-size: 34px; line-height: 48px;
+ *   margin-bottom: add-line(2); // margin-bottom: 48px;
+ * }
+ *
+ * To add a set of sizes (eg 'small - default = 10px), add a small object
+ * $font-sizes below, then call it like that:
+ * .footer {
+ *   font-size: map-get($font-sizes, 'small', 'default'); // output: 10px
+ * }
+ */
+$font-sizes: (
+  /*
+  "small": (
+    "default": 10px,
+  ),
+  */ "medium":
+    (
+      "smaller": 10px,
+      "small": 13px,
+      "default": 16px,
+      "big": 21px,
+      "bigger": 26px,
+      "biggest": 34px,
+      "oversize": 55px,
+      "line-smaller": 16px,
+      "line-small": 24px,
+      "line-default": 24px,
+      "line-big": 24px,
+      "line-bigger": 32px,
+      "line-biggest": 48px,
+      "line-oversize": 72px,
+    )
+);
+
+$fs: map-get(
+  $map: $font-sizes,
+  $key: "medium",
+);
+$lh: map-get(
+  $map: $fs,
+  $key: "line-default",
+);
+
+@mixin sizes($key: "default", $borders-width: 0) {
+  font-size: map-get($map: $fs, $key: $key);
+  line-height: map-get(
+      $map: $fs,
+      $key: "line-#{$key}",
+    ) - $borders-width;
+}
+
+@function add-line($number: 1, $borders-width: 0) {
+  @return (map-get($map: $fs, $key: "line-default") * $number) - $borders-width;
+}

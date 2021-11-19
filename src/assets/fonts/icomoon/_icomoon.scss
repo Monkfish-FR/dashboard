@@ -1,0 +1,52 @@
+$icon-cross: "\ea0f";
+$icon-pencil: "\e905";
+$icon-bin: "\e9ac";
+$icon-eye: "\e9ce";
+$icon-plus: "\ea0a";
+$icon-checkmark: "\ea10";
+
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 1;
+  text-transform: none;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-cross {
+  &::before {
+    content: $icon-cross;
+  }
+}
+.icon-pencil {
+  &::before {
+    content: $icon-pencil;
+  }
+}
+.icon-bin {
+  &::before {
+    content: $icon-bin;
+  }
+}
+.icon-eye {
+  &::before {
+    content: $icon-eye;
+  }
+}
+.icon-plus {
+  &::before {
+    content: $icon-plus;
+  }
+}
+.icon-checkmark {
+  &::before {
+    content: $icon-checkmark;
+  }
+}

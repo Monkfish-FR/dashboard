@@ -1,0 +1,38 @@
+module.exports = [
+  {
+    id: 1,
+    title: 'Morin SCOP',
+    alias: 'Morin SCOP',
+    subtitle: null,
+    siret: '701 164 086 00035',
+    address: '48 rue Pierre Charron',
+    locality: '83 500 La Seyne-sur-Mer',
+  },
+  {
+    id: 2,
+    title: 'Breton SARL',
+    alias: 'Breton SARL',
+    subtitle: null,
+    siret: '650 583 335 00079',
+    address: "73 route d'Argenteuil",
+    locality: '95 000 Cergy',
+  },
+  {
+    id: 3,
+    title: 'Rappan UI',
+    alias: 'Rappan UI',
+    subtitle: 'Graphic Interface',
+    siret: '207 132 374 00051',
+    address: '46 avenue du Faubourg Saint-Honoré',
+    locality: '60 650 Saint-Paul',
+  },
+  {
+    id: 4,
+    title: 'SA Mathieu',
+    alias: 'SA Mathieu',
+    subtitle: null,
+    siret: '201 060 039 00008',
+    address: '29 place de la Victoire',
+    locality: '63 000 Clermont-Ferrand',
+  },
+];

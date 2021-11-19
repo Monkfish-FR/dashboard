@@ -1,0 +1,104 @@
+@use "./vars" as v;
+
+form {
+  margin-bottom: v.add-line();
+  > div {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: v.add-line();
+  }
+
+  fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    width: 50%;
+
+    &:first-child {
+      padding-right: 0.5rem;
+    }
+
+    &:last-child:not(:first-child) {
+      padding-left: 0.5rem;
+    }
+  }
+
+  label {
+    display: block;
+    position: relative;
+
+    > .btn-icon {
+      right: 0;
+      position: absolute;
+      top: 0;
+    }
+  }
+}
+
+input,
+textarea,
+select {
+  @include v.sizes("small");
+
+  border: 1px solid v.$light;
+  border-radius: 4px;
+  font-family: v.$font-code;
+  padding: 0 0.5rem;
+  transition: border-color 0.25s ease-out;
+  width: 100%;
+
+  &:focus {
+    border-color: v.$secondary;
+    outline: 0;
+  }
+}
+
+input {
+  line-height: calc(2rem - 2px);
+
+  &[list] {
+    + span::after {
+      background: v.$white;
+      color: v.$grey;
+      content: "…";
+      display: block;
+      line-height: calc(2rem - 2px);
+      padding-left: 0.25rem;
+      pointer-events: none;
+      position: absolute;
+      right: 0.5rem;
+      top: calc(1.5rem + 1px);
+      width: 1rem;
+      z-index: 1;
+    }
+  }
+}
+
+textarea {
+  resize: vertical;
+}
+
+select {
+  height: calc(2rem - 2px);
+  margin: 0 0.5rem;
+  width: auto;
+}
+
+.large,
+.x-large {
+  fieldset {
+    padding: 0;
+    width: 100%;
+  }
+
+  textarea {
+    height: v.add-line(3);
+    width: 100%;
+  }
+}
+
+.x-large {
+  textarea {
+    height: v.add-line(5);
+  }
+}

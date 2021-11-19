@@ -1,0 +1,97 @@
+@use "./vars" as v;
+
+h2 {
+  @include v.sizes('big');
+
+  font-family: v.$font-serif;
+  /* tricky positioning */
+  margin-top: -5px;
+  line-height: 26px; // font-size + margin-top
+}
+
+h3 {
+  @include v.sizes("small", 1);
+
+  border-bottom: 1px solid v.$grey;
+  color: v.$grey;
+  line-height: calc(2rem - 2px);
+  margin-bottom: v.add-line();
+  padding: 0 0.25rem;
+  text-align: left;
+}
+
+strong {
+  font-weight: 700;
+
+  small {
+    font-weight: 400;
+  }
+}
+
+small {
+  font-size: 0.85em;
+}
+
+em {
+  font-style: italic;
+}
+
+pre {
+  @include v.sizes("small");
+
+  font-family: v.$font-code;
+}
+
+.no-results {
+  background-color: v.$secondary;
+  border-radius: 4px;
+  margin: v.add-line(2) auto;
+  padding: v.add-line(3);
+  text-align: center;
+  width: 80%;
+
+  p {
+    margin-bottom: v.add-line(1);
+  }
+}
+
+.bg {
+  &-success,
+  &-warning {
+    border-radius: 4px;
+    display: inline-block;
+    padding: 0 .25rem;
+  }
+
+  &-success {
+    background: v.$success;
+    color: v.$white;
+    font-weight: 400;
+  }
+
+  &-warning {
+    background: v.$warning;
+  }
+}
+
+.color {
+  &-lighter {
+    color: lighten($color: v.$default, $amount: 50);
+  }
+
+  &-success {
+    color: v.$success;
+  }
+
+  &-warning {
+    color: v.$warning;
+  }
+}
+
+.inactive {
+  opacity: .5;
+}
+
+.t-center {
+  text-align: center;
+}

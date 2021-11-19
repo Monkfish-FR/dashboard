@@ -1,0 +1,75 @@
+@use "/src/styles/vars" as v;
+
+$nav-height: v.add-line(4); // @see Nav.scss > .nav > height
+$content-padding: v.add-line(2); // @see App.scss > .app__content > paddingTop
+$row-gap: v.add-line(2);
+$page-height: calc(100vh - $nav-height - $content-padding);
+$area-height: calc($page-height - $row-gap) / 2;
+
+.homepage {
+  column-gap: v.add-line(2);
+  display: grid;
+  grid-template-areas:
+    "invoices reminder"
+    "reporting quotations";
+  grid-template-rows: calc(50% - ($row-gap / 2)) calc(50% - ($row-gap / 2));
+  grid-template-columns: 1fr 1fr;
+  height: $page-height;
+  justify-items: stretch;
+  padding: 0 v.add-line();
+  row-gap: $row-gap;
+  width: 100%;
+
+  #invoicesChart {
+    grid-area: invoices;
+  }
+  #reporting {
+    grid-area: reporting;
+  }
+  #reminder {
+    grid-area: reminder;
+  }
+  #quotationsSummary {
+    grid-area: quotations;
+  }
+}
+
+.chart {
+  height: calc(($area-height) - v.add-line(2)); // Available height - margin
+  margin: v.add-line() 0;
+  width: 100%;
+
+  .card {
+    margin-top: 0;
+  }
+}
+
+.reporting {
+  &__card {
+    width: 15rem;
+  }
+
+  &__annual {
+    margin-top: v.add-line();
+    text-align: center;
+  }
+}
+
+.reminder {
+  height: calc(($area-height) - v.add-line()); // Available height - .card margin
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.quotations {
+  &-stats {
+    margin-top: v.add-line();
+    text-align: center;
+  }
+}
+
+.filters {
+  position: absolute;
+  right: 1rem;
+  top: -2px;
+}

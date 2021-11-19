@@ -1,0 +1,34 @@
+@use 'reset';
+@use 'vars' as v;
+
+@use 'global';
+@use 'form';
+@use 'button';
+@use 'table';
+@use 'card';
+
+html,
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100vh;
+}
+
+html {
+  @include v.sizes();
+}
+
+body {
+  @include v.sizes();
+
+  background: v.$white;
+  color: v.$default;
+  font-family: v.$font-sans;
+  margin: 0;
+}

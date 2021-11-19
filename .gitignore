@@ -1,0 +1,14 @@
+node_modules/
+dist/
+
+**/database/data/
+*.sqlite
+*.sql
+*.BAK
+
+.vscode/*
+
+.DS_Store
+Thumbs.db
+
+yarn-error.log

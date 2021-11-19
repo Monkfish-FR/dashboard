@@ -1,0 +1,55 @@
+{
+  "name": "Monkfish",
+  "fullName": "Fabien TAVERNIER",
+  "email": "contact@monkfish.fr",
+  "siret": "510 870 371 00026",
+  "address": "9 av. du Pont Major",
+  "locality": "62 140 Hesdin",
+  "mentions": {
+    "tva": "TVA non applicable selon l'article 293 B du CGI",
+    "validity": "Devis valable 3 mois.",
+    "payment": {
+      "limit": 500,
+      "rate": 0.5,
+      "over": "Acompte de 50 % à l'acceptation du devis, versement du solde à la livraison.",
+      "under": "Paiement à la livraison"
+    }
+  },
+  "payment": {
+    "iban": "FR76 XXXX XXXX XXXX XXXX XXXX 016",
+    "bic": "CCBPFRPPLIL",
+    "order": "Fabien TAVERNIER",
+    "paymentTerm": 1
+  },
+  "reporting": {
+    "interval": 3,
+    "dueMonths": [
+      "1",
+      "4",
+      "7",
+      "10"
+    ],
+    "concernedMonths": {
+      "1": [
+        "Nov",
+        "Dec",
+        "Jan"
+      ],
+      "4": [
+        "Feb",
+        "Mar",
+        "Apr"
+      ],
+      "7": [
+        "May",
+        "Jun",
+        "Jul"
+      ],
+      "10": [
+        "Aug",
+        "Sep",
+        "Oct"
+      ]
+    }
+  }
+}

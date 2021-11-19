@@ -1,0 +1,56 @@
+@use "./vars" as v;
+
+.card {
+  background-color: v.$lighter;
+  border-radius: 4px;
+  margin: v.add-line(1) auto 0;
+
+  p {
+    padding: v.add-line(1);
+    text-align: center;
+  }
+
+  button {
+    float: right;
+  }
+
+  &__block,
+  &__big {
+    display: block;
+  }
+
+  &__big {
+    @include v.sizes('bigger');
+
+    margin-top: v.add-line(1);
+  }
+
+  &__too-long {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    white-space: nowrap;
+  }
+
+  &-success {
+    color: v.$success;
+  }
+  &-warning {
+    color: v.$warning;
+  }
+  &-error {
+    color: v.$error;
+  }
+}
+
+.cards {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+
+  .card {
+    width: calc(33% - 2rem);
+  }
+}

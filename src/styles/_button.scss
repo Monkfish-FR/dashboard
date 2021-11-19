@@ -1,0 +1,188 @@
+@use "./vars" as v;
+
+button,
+.button-like {
+  @include v.sizes("small", 2);
+
+  background: v.$white;
+  border: 1px solid v.$light;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;
+  padding: 0 1em;
+  text-align: center;
+  transition: all 0.25s ease-out;
+  white-space: nowrap;
+
+  .t-center & {
+    margin: 0 auto;
+  }
+
+  h2 + & {
+    margin-top: v.add-line(0.3333);
+  }
+}
+
+.buttons {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  &-text,
+  &-close {
+    border-color: transparent;
+  }
+
+  &-close {
+    @include v.sizes("smaller", 2);
+
+    color: v.$grey;
+    margin: 0 0 0 auto;
+    padding: 0;
+  }
+
+  &-icon {
+    color: v.$grey;
+    height: 2rem;
+    padding: 0;
+    width: 2rem;
+
+    &:not([disabled]):hover {
+      border-color: v.$grey;
+      color: v.$default;
+    }
+
+    .icon {
+      @include v.sizes();
+
+      align-items: center;
+      display: inline-flex;
+      justify-content: center;
+      line-height: calc(2rem - 2px);
+      pointer-events: none;
+    }
+
+    &.small {
+      height: 1rem;
+      line-height: calc(1rem - 2px);
+      width: 1rem;
+
+      .icon {
+        @include v.sizes("smaller");
+
+        line-height: calc(1rem - 2px);
+      }
+    }
+  }
+
+  &-add,
+  &-view {
+    background: v.$primary;
+    border-color: v.$primary;
+    color: v.$white;
+
+    &:not([disabled]):hover {
+      background: darken($color: v.$primary, $amount: 10);
+      border-color: darken($color: v.$primary, $amount: 10);
+      color: v.$white;
+    }
+  }
+
+  &-cancel {
+    background: v.$light;
+    border-color: v.$light;
+
+    &:not([disabled]):hover {
+      background: darken($color: v.$light, $amount: 10);
+      border-color: darken($color: v.$light, $amount: 10);
+    }
+  }
+
+  &-success {
+    background: v.$success;
+    border-color: v.$success;
+    color: v.$white;
+
+    &:not([disabled]):hover {
+      background: darken($color: v.$success, $amount: 5);
+      border-color: darken($color: v.$success, $amount: 5);
+      color: v.$white;
+    }
+  }
+
+  &-validate {
+    background: v.$white;
+    border-color: v.$success;
+    color: v.$success;
+
+    &:not([disabled]):hover {
+      background: darken($color: v.$white, $amount: 5);
+      border-color: darken($color: v.$success, $amount: 5);
+      color: darken($color: v.$success, $amount: 5);
+    }
+  }
+
+  &-edit {
+    background: v.$secondary;
+    border-color: v.$secondary;
+
+    &:not([disabled]):hover {
+      background: darken($color: v.$secondary, $amount: 5);
+      border-color: darken($color: v.$secondary, $amount: 5);
+    }
+  }
+
+  &-delete {
+    background: v.$error;
+    border-color: v.$error;
+    color: v.$white;
+
+    &:not([disabled]):hover {
+      background: darken($color: v.$error, $amount: 10);
+      border-color: darken($color: v.$error, $amount: 10);
+      color: v.$white;
+    }
+  }
+
+  &-reset {
+    color: v.$error;
+    margin: 0 auto;
+
+    &:not([disabled]):hover {
+      color: darken($color: v.$error, $amount: 10);
+    }
+  }
+
+  &-warning {
+    color: v.$warning;
+    margin: 0.5rem auto 0;
+
+    &:not([disabled]):hover {
+      color: darken($color: v.$warning, $amount: 10);
+    }
+  }
+
+  &-submit {
+    line-height: calc(2rem - 2px);
+    width: 100%;
+
+    + .btn-submit {
+      margin-top: v.add-line();
+    }
+  }
+
+  &-filters {
+    background: v.$white;
+    border-color: v.$white;
+    color: v.$light;
+    display: inline-block;
+  }
+
+  &[disabled] {
+    cursor: default;
+    opacity: 0.5;
+  }
+}

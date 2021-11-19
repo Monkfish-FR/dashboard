@@ -40,6 +40,11 @@ To start with existing data, run these commands from the project root directory:
 yarn run dummy:migrate:update
 ```
 
+- Populate the database:
+```bash
+yarn run dummy:seed:run
+```
+
 - Start the application:
 ```bash
 yarn run dummy

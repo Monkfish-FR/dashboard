@@ -13,7 +13,7 @@ const CURRENT_MONTH = new Date().getMonth() + 1;
 export default function Reporting(props: ReportingProps) {
   const { invoices } = props;
 
-  const data: TotalMonthUI[] = invoices[CURRENT_YEAR];
+  const data: TotalMonthUI[] = invoices[CURRENT_YEAR] || [];
 
   /**
    * Get the amount to declare by month

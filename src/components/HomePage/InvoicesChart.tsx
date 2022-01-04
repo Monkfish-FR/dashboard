@@ -29,6 +29,28 @@ export default function InvoicesChart(props: ChartProps) {
   const [year, setYear] = useState(new Date().getFullYear().toString());
   const [data, setData] = useState<TotalMonthUI[] | null>(null);
 
+  function getInvoices() {
+    const currentYear = new Date().getFullYear().toString();
+
+    if (Object.prototype.hasOwnProperty.call(invoices, currentYear)) {
+      return invoices;
+    }
+
+    const emptyYear: any = [];
+    monthsList.forEach(({ abbreviation }, index) => {
+      emptyYear[index] = {
+        month: abbreviation,
+        paid: 0,
+        pending: 0,
+      };
+    });
+
+    return {
+      ...invoices,
+      [currentYear]: [...emptyYear],
+    };
+  }
+
   function getFilterYears(totals: TotalDataUI): OptionUI[] {
     return Object.keys(totals).map((item: string) => ({ key: item }));
   }
@@ -90,16 +112,19 @@ export default function InvoicesChart(props: ChartProps) {
   }
 
   useEffect(() => {
-    setData(invoices[year]);
+    const values = getInvoices();
+    setData(values[year]);
   }, []);
 
   useEffect(() => {
-    const filterYears = getFilterYears(invoices);
+    const values = getInvoices();
+
+    const filterYears = getFilterYears(values);
     setYears([
       ...filterYears,
     ]);
 
-    setData(invoices[year]);
+    setData(values[year]);
   }, [invoices, year]);
 
   return (

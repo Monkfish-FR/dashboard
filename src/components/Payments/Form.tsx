@@ -72,7 +72,7 @@ class PaymentsForm extends Component<PaymentFormUI, PaymentUI> {
 
   handleReset = (event: any) => {
     event.preventDefault();
-
+    // eslint-disable-next-line no-console
     console.log('paymentForm:reset:49', this.state);
   }
 
